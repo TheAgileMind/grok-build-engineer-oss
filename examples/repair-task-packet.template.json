@@ -1,0 +1,46 @@
+{
+  "contractVersion": "agent-platform.grok-build-engineer-task.v2",
+  "taskRunId": "run-example-001",
+  "requestId": "request-example-repair-001",
+  "mode": "repair",
+  "delivery": "artifact_only",
+  "repositoryRoot": "C:/approved/source/owner-repository",
+  "worktree": "C:/approved/worktrees/mission-example",
+  "sourceSha": "0123456789abcdef0123456789abcdef01234567",
+  "task": {
+    "title": "Repair the rejected candidate",
+    "instructions": "Address only the bounded failed-acceptance findings and rerun only the approved checks.",
+    "contextPaths": ["src"]
+  },
+  "policy": {
+    "allowedPaths": ["src/**", "test/**"],
+    "allowedCommands": ["npm test", "npm run build"],
+    "allowedEnvironment": [],
+    "network": "none",
+    "tools": [],
+    "timeouts": { "startMs": 30000, "turnMs": 900000, "idleMs": 120000, "cancelMs": 10000 },
+    "repairBudget": 1
+  },
+  "provider": { "executable": "C:/Program Files/Grok/grok.exe", "model": "grok-build" },
+  "stateRoot": "C:/approved/state/grok-example-001",
+  "continuation": {
+    "priorTaskRunId": "run-example-001",
+    "priorRequestId": "request-example-001",
+    "priorSessionId": "123e4567-e89b-42d3-a456-426614174000",
+    "priorReceiptDigest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "priorSourceSha": "0123456789abcdef0123456789abcdef01234567",
+    "priorRepositoryRoot": "C:/approved/source/owner-repository",
+    "priorWorktree": "C:/approved/worktrees/mission-example",
+    "priorDiffDigest": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "findingsDigest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "approval": {
+    "contractVersion": "agent-platform.grok-build-engineer-approval.v1",
+    "approvalId": "approval-example-repair-001",
+    "packetDigest": null,
+    "issuedAt": "2099-01-01T00:00:00.000Z",
+    "expiresAt": "2099-01-01T01:00:00.000Z",
+    "approvedBy": "example-operator",
+    "authorizationStatement": "Example only; approve the prepared repair digest before resuming the exact prior session."
+  }
+}

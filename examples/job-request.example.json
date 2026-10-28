@@ -1,0 +1,37 @@
+{
+  "contractVersion": "agent-platform.grok-build-engineer-task.v2",
+  "taskRunId": "run-example-job-001",
+  "requestId": "request-example-job-001",
+  "mode": "implementation",
+  "delivery": "artifact_only",
+  "repositoryRoot": "C:/approved/source/owner-repository",
+  "worktree": "C:/approved/worktrees/job-example-001",
+  "sourceSha": "0123456789abcdef0123456789abcdef01234567",
+  "task": {
+    "title": "Illustrative bounded job request",
+    "instructions": "Example only: complete the named task in the admitted worktree and run only the listed local check.",
+    "contextPaths": ["src"]
+  },
+  "policy": {
+    "allowedPaths": ["src/**", "test/**"],
+    "allowedCommands": ["npm test"],
+    "allowedEnvironment": [],
+    "network": "none",
+    "tools": [],
+    "timeouts": { "startMs": 30000, "turnMs": 900000, "idleMs": 120000, "cancelMs": 10000 },
+    "repairBudget": 0
+  },
+  "provider": { "executable": "C:/Program Files/Grok/grok.exe", "model": "grok-build" },
+  "stateRoot": "C:/approved/state/grok-example-job-001",
+  "continuation": null,
+  "findingsDigest": null,
+  "approval": {
+    "contractVersion": "agent-platform.grok-build-engineer-approval.v1",
+    "approvalId": "approval-example-job-001",
+    "packetDigest": "sha256:2dffcce036ed2f052a87d901500301c95b934415d9183e24076311a06a8006c8",
+    "issuedAt": "2099-01-01T00:00:00.000Z",
+    "expiresAt": "2099-01-01T01:00:00.000Z",
+    "approvedBy": "example-operator",
+    "authorizationStatement": "Example only; a human must approve this exact digest and scope before submit."
+  }
+}

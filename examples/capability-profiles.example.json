@@ -1,0 +1,35 @@
+{
+  "contractVersion": "agent-platform.grok-build-engineer-capability-profiles.v2",
+  "note": "Reference only. Named profiles are immutable in src/profiles.mjs; caller input cannot select a process, cwd, argv, environment, capability inventory, or approval authority. Trusted-host is not an OS sandbox, and external effects remain separately gated.",
+  "profiles": [
+    {
+      "profileId": "hermetic",
+      "status": "approved",
+      "enforcementClass": "os_enforced",
+      "environmentKeys": ["LANG", "PATH"],
+      "commandAllowlist": ["git_status", "npm_test"],
+      "externalEffects": "denied"
+    },
+    {
+      "profileId": "trusted-local",
+      "status": "approved",
+      "enforcementClass": "trusted_host",
+      "environmentKeys": ["GROK_HOME", "HOME", "LANG", "PATH", "USERPROFILE"],
+      "commandAllowlist": ["git_diff", "git_status", "npm_ci_offline", "npm_install_offline", "npm_run_build", "npm_run_test", "npm_run_verify", "npm_test"],
+      "externalEffects": "denied"
+    },
+    {
+      "profileId": "connected",
+      "status": "unavailable_pending_live_proof",
+      "enforcementClass": "trusted_host",
+      "environmentKeys": [],
+      "commandAllowlist": [],
+      "externalEffects": "unavailable"
+    }
+  ],
+  "policyNotes": [
+    "Only exact command tokens are admitted; wildcard command patterns are invalid.",
+    "The connected profile is not available in 0.5.1 and no live provider proof is claimed.",
+    "Provider cost is reported evidence when available, not a hard enforcement boundary."
+  ]
+}
