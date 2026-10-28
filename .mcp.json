@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "grok-build-engineer-compatibility": {
+      "command": "node",
+      "args": [
+        "./mcp/server.mjs",
+        "--bundle-sha256",
+        "sha256:51aea9dd7770000015ddd1e1966bc1ca66a4fcfd87ba5a751cccaaa31c7ab50d"
+      ],
+      "cwd": "."
+    }
+  }
+}
