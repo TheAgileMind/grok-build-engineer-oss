@@ -1,0 +1,20 @@
+{
+  "name": "grok-build-engineer",
+  "interface": {
+    "displayName": "Grok Build Engineer"
+  },
+  "plugins": [
+    {
+      "name": "grok-build-engineer",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

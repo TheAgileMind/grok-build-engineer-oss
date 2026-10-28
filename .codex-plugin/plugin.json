@@ -1,0 +1,20 @@
+{
+  "name": "grok-build-engineer",
+  "version": "0.5.7",
+  "description": "CLI-first governed local Grok Build Engineer adapter for Codex.",
+  "author": {
+    "name": "TheAgileMind"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Grok Build Engineer",
+    "shortDescription": "Run governed local engineering jobs through the CLI.",
+    "longDescription": "A CLI-first governed finite Grok Build Engineer runner with Codex-owned custody, validation, repair, and acceptance.",
+    "developerName": "TheAgileMind",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Help me prepare a governed local Grok Build Engineer CLI submission."
+    ]
+  }
+}
