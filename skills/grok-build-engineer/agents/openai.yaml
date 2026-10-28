@@ -1,0 +1,4 @@
+interface:
+  display_name: Grok Build Engineer
+  short_description: Run bounded local engineering jobs through the governed CLI.
+  default_prompt: Verify provider, private-context, worktree, validation, cost, and external-effect authority before preparing a job.
