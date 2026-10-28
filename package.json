@@ -1,0 +1,20 @@
+{
+  "name": "grok-build-engineer",
+  "version": "0.5.7",
+  "private": true,
+  "type": "module",
+  "description": "CLI-first governed local Grok Build Engineer adapter for Codex.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "release-gate": "node scripts/run-tests.mjs --release",
+    "build": "node --check src/contracts.mjs && node --check src/redaction.mjs && node --check src/stream-frames.mjs && node --check src/headless-session.mjs && node --check src/artifact-delivery.mjs && node --check src/one-shot-runner.mjs && node --check src/task-policy.mjs && node --check src/pretool-guard.mjs && node --check src/pretool-overlay.mjs && node --check src/cli-contract.mjs && node --check src/activation-runtime.mjs && node --check src/activation-registry.mjs && node --check src/mcp-server.mjs && node --check scripts/activation-candidate.mjs && node --check scripts/finalize-activation.mjs && node --check scripts/registry-status.mjs && node --check scripts/grok-delegate.mjs && node --check scripts/grok-pretool-guard.mjs && node --check scripts/prepare-task-packet.mjs && node --check scripts/run-tests.mjs && node src/build-mcp.mjs && node --check mcp/server.mjs",
+    "verify": "npm run build && npm run release-gate"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "1.3.0",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": { "esbuild": "0.25.10" }
+}
